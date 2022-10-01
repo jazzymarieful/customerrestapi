@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: customerrestapi
+  datasource:
+    url: jdbc:h2:file:~/suriname/db/customerdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+    generate-ddl: true
+#  h2.console:
+#    enabled: true
+#    path: ~/suriname/tools/h2
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: DEBUG
