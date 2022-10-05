@@ -1,4 +1,4 @@
-package com.qualogy.customerrestapi.database;
+package com.qualogy.customerrestapi.adapters.database;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class DbCustomer {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -20,8 +20,12 @@ public class DbCustomer {
     @Column(nullable = false)
     private boolean directMail;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,5 +50,15 @@ public class DbCustomer {
 
     public void setDirectMail(boolean directMail) {
         this.directMail = directMail;
+    }
+
+    @Override
+    public String toString() {
+        return "DbCustomer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", directMail=" + directMail +
+                '}';
     }
 }

@@ -10,5 +10,6 @@ public class CustomerRestApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CustomerRestApiApplication.class, args);
+
     }
 }
